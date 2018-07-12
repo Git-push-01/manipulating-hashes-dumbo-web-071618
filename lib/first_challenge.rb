@@ -12,15 +12,13 @@ def first_challenge
       favorite_icecream_flavors: ["strawberry", "cookie dough", "mint chip"]
     }
   }
-  def delete_value(value)
-     delete_if { |k,v| v == value }
-   end
- end
-
- h = favorite_icecream_flavors
- h.delete_value("strawberry")
- end
- end
+  contacts["Freddy Mercury"].each do |attribute, value|
+      if attribute == :favorite_icecream_flavors
+        value.delete_if do |flavor|
+          flavor == "strawberry"
+      end
+    end
+  end
 
   #your code here
 
